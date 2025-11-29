@@ -1,0 +1,97 @@
+/* src/pages/Home.css */
+
+/* 1. The Background Image Container */
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  /* Use flexbox to center the glass box perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* FIXED BACKGROUND + DARK OVERLAY */
+  /* This gradient adds a 90% opaque dark green layer ON TOP of your image */
+  background-image: 
+    linear-gradient(
+      rgba(26, 60, 45, 0.9), 
+      rgba(26, 60, 45, 0.9)
+    ),
+    url('473673432_1076053854319266_5726734137411050588_n.jpg'); 
+
+    
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps image still while scrolling */
+  
+  /* Remove these as they are now handled by the gradient above */
+  /* background-color: rgba(26, 60, 45, 0.9); */
+  /* background-blend-mode: overlay; */
+}
+
+/* 2. The Green Glass Box (The Core Fix) */
+.main-content-box {
+  background: rgba(26, 60, 45, 0.85); /* Slightly less opaque to show depth */
+  backdrop-filter: blur(12px);        /* Frosted Glass Effect */
+  border-radius: 30px;                /* Large rounded corners */
+  padding: 4rem 3rem;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5); /* Deep shadow for 3D effect */
+  border: 1px solid rgba(255,255,255,0.1); /* Subtle border */
+  text-align: center;
+  color: white; /* Force all text inside to be white */
+}
+
+/* Header Text */
+.header-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: white;
+}
+
+.subtitle {
+  color: #a8d5c2; /* Light green accent text */
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* Search Bar Pill */
+.search-wrapper {
+  margin: 0 auto 4rem auto;
+  max-width: 650px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 18px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: #f0fdf4; /* Very light green tint */
+  color: #1a4d3a;      /* Dark green text */
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.search-input::placeholder {
+  color: #4ade80; /* Bright green placeholder */
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  text-align: left; /* Reset text align so cards look normal */
+}
+
+/* No Results Text */
+.no-results p {
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}

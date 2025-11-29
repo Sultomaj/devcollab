@@ -1,0 +1,217 @@
+/* --- DASHBOARD CONTAINER (Same as Home) --- */
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Center Vertically */
+  justify-content: center; /* Center Horizontally */
+  padding: 4rem 2rem; /* Add top/bottom padding so it doesn't touch edges */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Background Gradient (Matches Home) */
+
+background-image: 
+    linear-gradient(
+      rgba(26, 60, 45, 0.9), 
+      rgba(26, 60, 45, 0.9)
+    ),
+    url('King_Abdulaziz_University_Cover_1920x1080_bdb3305716.webp'); 
+  
+    
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Darken the image for better text contrast */
+}
+
+/* --- GLASS BOX (The Main Wrapper) --- */
+.dashboard-glass-box {
+
+  background: rgba(26, 60, 45, 0.9); /* Dark Green */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  border-radius: 40px;
+  padding: 4rem 3rem; /* Spacious padding inside */
+  
+  width: 100%;
+  max-width: 1100px;
+  min-height: 85vh; /* Tall box */
+  
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtler border */
+  color: white;
+  
+  /* Internal Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --- TOP NAV (Logo + Back Link) --- */
+.dashboard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nav-logo img {
+  height: 35px; /* Adjust based on your logo file */
+  object-fit: contain;
+}
+
+.nav-link {
+  color: #a7f3d0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/* --- HEADER (Title + User Info + Action) --- */
+.dashboard-header {
+  /* Flex styles handled inline in JSX for layout, but colors here */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 2rem;
+}
+
+.header-left h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -1px;
+  color: white; /* Ensure title is white */
+}
+
+.header-left p {
+  color: #d1fae5;
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.new-project-btn {
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+  background: #16a34a;
+}
+
+/* --- SECTIONS --- */
+.section-title {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
+
+/* --- CARDS (Clean White Look inside Dark Box) --- */
+.dashboard-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e293b; /* Dark text for white card */
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); /* Slightly stronger card shadow */
+  transition: transform 0.2s;
+  border: none;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* --- BUTTONS INSIDE CARD --- */
+.action-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-apps {
+  background: #e0f2fe;
+  color: #0284c7;
+  margin-right: 10px;
+}
+.btn-apps:hover { background: #bae6fd; }
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.btn-delete:hover { background: #fecaca; }
+
+/* --- EMPTY STATE --- */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  color: #a7f3d0;
+  font-style: italic;
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
+/* --- DROPDOWN APPS AREA --- */
+.apps-area {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.app-item {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+}
