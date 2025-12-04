@@ -1,7 +1,10 @@
-import React from 'react';
-import './ProjectCard.css'; // Make sure to import the CSS!
+import React, { useState } from 'react'; // 1. Added useState
+import './ProjectCard.css';
 
 const ProjectCard = ({ project, user, onJoin }) => {
+  // 2. State to handle text expansion
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const currentMembers = project.current_members || 1;
   const maxMembers = project.max_members || 3;
   const isFull = currentMembers >= maxMembers;
@@ -23,7 +26,7 @@ const ProjectCard = ({ project, user, onJoin }) => {
       {/* Skills */}
       <div className="skills-container">
         {skillsArray.length > 0 ? (
-          skillsArray.slice(0, 3).map((skill, index) => ( // Show only first 3 skills
+          skillsArray.slice(0, 3).map((skill, index) => (
             <span key={index} className="skill-tag">{skill.trim()}</span>
           ))
         ) : (
@@ -31,10 +34,33 @@ const ProjectCard = ({ project, user, onJoin }) => {
         )}
       </div>
 
+      {/* 3. Modified description area to include Read More logic */}
       <p className="card-description">
-        {project.description.length > 80 
-          ? project.description.substring(0, 80) + "..." 
-          : project.description}
+        {/* If expanded, show full text; otherwise, truncate */}
+        {isExpanded ? project.description : (
+          project.description.length > 80 
+            ? project.description.substring(0, 80) + "..." 
+            : project.description
+        )}
+
+        {/* Show button only if text is longer than 80 characters */}
+        {project.description.length > 80 && (
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#2563eb', // Blue color
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              fontSize: '0.85rem',
+              marginLeft: '5px',
+              padding: 0
+            }}
+          >
+            {isExpanded ? "Show Less" : "Read More"}
+          </button>
+        )}
       </p>
 
       <div className="card-footer">
