@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useProjects } from "../context/ProjectContext";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import './CreateProject.css'; // Import the new styles
+import './CreateProject.css'; 
 
 const CreateProject = () => {
   const { addProject } = useProjects();
