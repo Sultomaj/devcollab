@@ -7,7 +7,7 @@ const EditProject = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   
-  // Safe destructuring to prevent crashes if context is loading
+  
   const context = useProjects();
   const projects = context?.projects || [];
   const updateProject = context?.updateProject;
