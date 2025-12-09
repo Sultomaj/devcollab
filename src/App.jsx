@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import CreateProject from './pages/CreateProject';
 import Login from './pages/Login';
-import EditProject from './pages/EditProject'; // 👈 THIS WAS MISSING OR NOT CONNECTED
+import EditProject from './pages/EditProject'; // 
 
 /* --- PROTECTED ROUTE WRAPPER --- */
 const ProtectedRoute = ({ children }) => {
@@ -20,17 +20,12 @@ const ProtectedRoute = ({ children }) => {
 };
 
 /* --- LAYOUT COMPONENT --- */
-/* This hides the Global Navbar on pages that have their own internal headers */
 const Layout = ({ children }) => {
   const location = useLocation();
   
-  // Pages where we DO NOT want the global navbar to show
-  // We hide it on "/" (Home), "/dashboard", and "/create" because they have their own designs now
+  
   const hideNavbarRoutes = ["/", "/dashboard", "/create", "/login"];
-  
-  // We ALSO want to hide it on edit pages, which start with "/edit"
   const isEditPage = location.pathname.startsWith("/edit");
-  
   const showNavbar = !hideNavbarRoutes.includes(location.pathname) && !isEditPage;
 
   return (
@@ -48,11 +43,11 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
-              {/* Public Routes */}
+              
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               
-              {/* Protected Routes */}
+              
               <Route 
                 path="/dashboard" 
                 element={
@@ -71,7 +66,7 @@ function App() {
                 } 
               />
 
-              {/* 👇 THIS IS THE MISSING ROUTE 👇 */}
+              
               <Route 
                 path="/edit/:id" 
                 element={
