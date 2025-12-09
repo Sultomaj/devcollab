@@ -37,20 +37,20 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       
-      {/* Everything is inside this single glass box */}
+      
       <div className="dashboard-glass-box">
         
-        {/* --- HEADER ROW (Logo, Nav, Actions) --- */}
+        
         <div className="dashboard-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
           
-          {/* Left: Logo */}
+          
           <div className="header-left">
              <Link to="/" className="nav-logo" style={{ textDecoration: 'none' }}>
                 <img src="/logo.png" alt="DevCollab" style={{ height: '20px', objectFit: 'contain' }} />
              </Link>
           </div>
 
-          {/* Right: Navigation & Actions */}
+          
           <div className="header-right" style={{ display: 'flex', gap: '20px', alignItems: 'center', fontSize: '0.95rem' }}>
             <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }}>Browse Projects</Link>
             <Link to="/dashboard" style={{ color: '#d1fae5', textDecoration: 'none', fontWeight: '600' }}>My Dashboard</Link>
