@@ -8,7 +8,7 @@
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
-  /* OR use your image: background-image: url('/background.jpg'); background-size: cover; */
+
   background-image: 
     linear-gradient(
       rgba(26, 60, 45, 0.9), 
