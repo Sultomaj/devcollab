@@ -25,7 +25,7 @@ const Navbar = () => {
           <>
             <Link to="/dashboard" style={{ color: "#ddd", textDecoration: "none" }}>My Dashboard</Link>
             
-            {/* ✨ THIS IS THE MISSING BUTTON ✨ */}
+            {}
             <Link to="/create" style={{ 
               background: "#28a745", 
               color: "white", 
